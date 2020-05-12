@@ -11,15 +11,18 @@ import PostsPage from "./components/PostsContainer/PostsPage";
 import SearchBar from "./components/SearchBar/SearchBarContainer";
 import dummyData from "./dummy-data";
 
+let data, setData;
+
 const App = () => {
-  const [data, setData] = useState(dummyData);
+  [data, setData] = useState(dummyData);
 
   return (
     <div className="App">
-      <PostsPage postsData={data}/>
       <SearchBar />
+      <PostsPage postsData={data}/>
     </div>
   );
 };
 
+export {data, setData};
 export default App;

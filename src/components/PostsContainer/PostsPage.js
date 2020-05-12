@@ -3,7 +3,7 @@
 import React, {useState} from "react";
 import Post from "./Post";
 import "./Posts.css";
-import dummyData from "../../../src/dummy-data";
+
 
 const PostsPage = (props) => {
   const {postsData} = props;

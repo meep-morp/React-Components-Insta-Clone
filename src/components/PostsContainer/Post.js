@@ -1,17 +1,13 @@
-// You will add code in this file
 import React, { useState } from "react";
-// import dummyData from "../../../src/dummy-data";
+import {data, setData} from "../../App"
 import CommentSection from "../CommentSection/CommentSectionContainer";
 import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";
 
 
 import "./Posts.css";
-let likeNumbers, setLikeNumbers;
 
-// pass props in this file to
 const Post = props => {
-  [likeNumbers, setLikeNumbers] = useState(27);
 
   return (
     <div className="post-border">
@@ -28,7 +24,7 @@ const Post = props => {
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection likeNumber={likeNumbers}/>
+      <LikeSection likesData={data}/>
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
@@ -37,5 +33,4 @@ const Post = props => {
   );
 };
 
-export {likeNumbers, setLikeNumbers};
 export default Post;
