@@ -1,14 +1,16 @@
 // You will add code in this file
 import React from "react";
+// import dummyData from "../../../src/dummy-data";
 import CommentSection from "../CommentSection/CommentSectionContainer";
 import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";
+
 
 import "./Posts.css";
 
 // pass props in this file to
 const Post = props => {
-  // set up state for the likes
+const [likeNumbers, setLikeNumbers]
 
   return (
     <div className="post-border">
@@ -25,7 +27,7 @@ const Post = props => {
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection />
+      <LikeSection likeNumber={}/>
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
