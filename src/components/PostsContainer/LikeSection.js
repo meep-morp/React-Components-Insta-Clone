@@ -9,9 +9,18 @@ const LikeSection = props => {
 
   const {likesData} = props;
   let [likeNumbers, setLikeNumbers] = useState(likesData);
+  let [hasLiked, setHasLiked] = useState(false);
 
-    const likePost = () => {
-      setLikeNumbers(likeNumbers + 1);
+    const likePost = event => {
+        if(hasLiked === false) {
+          setLikeNumbers(likeNumbers + 1);
+          setHasLiked(true);
+          event.target.classList.add("liked");
+      } else {
+          setHasLiked(false)
+          setLikeNumbers(likeNumbers - 1);
+          event.target.classList.remove("liked");
+      }
     }
 
    return (
@@ -21,7 +30,7 @@ const LikeSection = props => {
         key="likes-icons-container"
       >
         <div className="like-section-wrapper">
-          <FontAwesomeIcon icon={faHeart} onClick={likePost}/>
+          <FontAwesomeIcon icon={faHeart} onClick={likePost}  className="likeButton" />
         </div>
         <div className="like-section-wrapper">
           <FontAwesomeIcon icon={faComment} />

@@ -17,7 +17,8 @@ const CommentSection = props => {
       })}
       <CommentInput addNewComment={event => {
         event.preventDefault();
-        setComment(commentData.concat({username: "meep-morp", text: newComment}))}
+        setComment(commentData.concat({username: "meep-morp", text: newComment}))
+          }
         }/>
     </div>
   );

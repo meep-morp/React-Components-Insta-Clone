@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import {data, setData} from "../../App"
+import React from "react";
 import CommentSection from "../CommentSection/CommentSectionContainer";
 import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";

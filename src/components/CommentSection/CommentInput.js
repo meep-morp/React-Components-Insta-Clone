@@ -1,11 +1,11 @@
 // You do not need to do anything in this file
-import React, {useState, setState} from 'react';
+import React, {useState} from 'react';
 
 let newComment, setNewComment;
 
 const CommentInput = props => {
   [newComment, setNewComment] = useState('')
-  
+
   return (
     <form className="comment-form" onSubmit={props.addNewComment}>
       <input
