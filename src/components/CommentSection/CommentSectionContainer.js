@@ -1,18 +1,25 @@
 // You will add code to this file
 import React, { useState } from "react";
-import CommentInput from "./CommentInput";
 import Comment from "./Comment";
+import CommentInput from "./CommentInput";
 import "./Comment.css";
 
+let commentData, setComment;
+
 const CommentSection = props => {
-  // Add state for the comments
+  const {postId, comments} = props;
+  [commentData, setComment] = useState(comments);
+  console.log(comments);
 
   return (
     <div>
-      {/* map through the comments data and return the Comment component */}
+      {commentData.map((singleComment) => {
+        return <Comment key={postId} comment={singleComment}/>
+      })}
       <CommentInput />
     </div>
   );
 };
 
+export {commentData, setComment};
 export default CommentSection;

@@ -8,9 +8,7 @@ import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons'
 const LikeSection = props => {
 
   const {likesData} = props;
-  let [likeNumbers, setLikeNumbers] = useState(0);
-
-  console.log(likeNumbers);
+  let [likeNumbers, setLikeNumbers] = useState(likesData);
 
     const likePost = () => {
       setLikeNumbers(likeNumbers + 1);
@@ -29,7 +27,7 @@ const LikeSection = props => {
           <FontAwesomeIcon icon={faComment} />
         </div>
       </div>
-      <p className="like-number">{} likes</p>
+   <p className="like-number"> {likeNumbers} likes</p>
     </div>
   )};
 
