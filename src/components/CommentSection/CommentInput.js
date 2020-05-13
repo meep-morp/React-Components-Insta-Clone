@@ -1,14 +1,13 @@
 // You do not need to do anything in this file
-import React, {useState} from 'react';
-import {commentData, setComment} from "./CommentSectionContainer";
+import React, {useState, setState} from 'react';
+
+let newComment, setNewComment;
 
 const CommentInput = props => {
-  const [newComment, setNewComment] = useState('')
-
+  [newComment, setNewComment] = useState('')
+  
   return (
-    <form className="comment-form" onSubmit={ 
-      event => {setComment(commentData.push({username: "meep-morp", text: newComment}))
-    }}>
+    <form className="comment-form" onSubmit={props.addNewComment}>
       <input
         type="text"
         value={props.comment}
@@ -19,4 +18,5 @@ const CommentInput = props => {
   );
 };
 
+export {newComment}
 export default CommentInput;

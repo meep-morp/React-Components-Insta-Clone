@@ -1,14 +1,13 @@
 // You will add code to this file
 import React, { useState } from "react";
 import Comment from "./Comment";
-import CommentInput from "./CommentInput";
+import CommentInput, {newComment} from "./CommentInput";
 import "./Comment.css";
 
-let commentData, setComment;
 
 const CommentSection = props => {
   const {postId, comments} = props;
-  [commentData, setComment] = useState(comments);
+  const [commentData, setComment] = useState(comments);
   console.log(comments);
 
   return (
@@ -16,10 +15,12 @@ const CommentSection = props => {
       {commentData.map((singleComment) => {
         return <Comment key={postId} comment={singleComment}/>
       })}
-      <CommentInput />
+      <CommentInput addNewComment={event => {
+        event.preventDefault();
+        setComment(commentData.concat({username: "meep-morp", text: newComment}))}
+        }/>
     </div>
   );
 };
 
-export {commentData, setComment};
 export default CommentSection;
